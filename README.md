@@ -102,9 +102,9 @@ The API will be available at `http://localhost:5000`
   "Date": "2026-01-15",
   "Time": "08:30",
   "Station": "BLOOR YONGE STATION",
-  "Line": "BD",
-  "Code": "MUSC",
-  "Bound": "W"
+  "Line": "YU",
+  "Code": "SUO",
+  "Bound": "N"
 }
 ```
 
@@ -120,9 +120,9 @@ The API will be available at `http://localhost:5000`
 {
   "Date": "2026-01-15",
   "Station": "BLOOR YONGE STATION",
-  "Line": "BD",
-  "Code": "MUSC",
-  "Bound": "W"
+  "Line": "YU",
+  "Code": "SUO",
+  "Bound": "N"
 }
 ```
 
