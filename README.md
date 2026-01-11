@@ -2,7 +2,7 @@
 
 A machine learning system that predicts TTC (Toronto Transit Commission) subway delays using historical data from 2018-2025. Built with scikit-learn and deployed with Streamlit.
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](placeholder)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ttc-subway-delay-predictor-ssgui8zdnpmtruzu8kt6gq.streamlit.app/)
 
 ## 🎯 Features
 
@@ -12,11 +12,9 @@ A machine learning system that predicts TTC (Toronto Transit Commission) subway 
 - **REST API**: Programmatic access to predictions
 - **High Accuracy**: 83.4% accuracy on test data
 
-## 🌐 Live Demo
+## [🌐 Live Demo](https://ttc-subway-delay-predictor-ssgui8zdnpmtruzu8kt6gq.streamlit.app/)
 
-**Try it now**: [temp placeholder]
-
-No installation required - use the web app directly!
+**Try it [now!](https://ttc-subway-delay-predictor-ssgui8zdnpmtruzu8kt6gq.streamlit.app/)** No installation required - use the web app directly!
 
 ## 📊 Model Performance
 
@@ -29,11 +27,19 @@ No installation required - use the web app directly!
   - Historical delay rates by station/line/hour
   - Rush hour and weekend interactions
 
+## 🛠️ Technology Stack
+
+- **Machine Learning**: scikit-learn (HistGradientBoostingClassifier)
+- **Web Framework**: Streamlit (dashboard), Flask (API)
+- **Data Processing**: pandas, numpy
+- **Visualization**: matplotlib, seaborn
+- **Deployment**: Streamlit Community Cloud
+
 ## 🚀 Quick Start
 
 ### Option 1: Use the Hosted App (Recommended)
 
-Just visit: **[placeholder]**
+Just visit: **[TTC Subway Delay Predictor](https://ttc-subway-delay-predictor-ssgui8zdnpmtruzu8kt6gq.streamlit.app/)**
 
 ### Option 2: Run Locally
 
@@ -46,7 +52,7 @@ Just visit: **[placeholder]**
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+   git clone https://github.com/saajpatel/TTC-Subway-Delay-Predictor
    cd YOUR_REPO
    ```
 
@@ -85,38 +91,55 @@ The API will be available at `http://localhost:5000`
 3. Click "Predict Delay" to get the probability
 4. Or use the **24-Hour Forecast** tab to see delay patterns throughout the day
 
-### REST API
+### API Endpoints
 
-**Single Prediction**
-```bash
-curl -X POST http://localhost:5000/predict \
-  -H "Content-Type: application/json" \
-  -d '{
-    "Date": "2026-01-15",
-    "Time": "08:30",
-    "Station": "BLOOR YONGE STATION",
-    "Line": "BD",
-    "Code": "MUSC",
-    "Bound": "W"
-  }'
+#### **Single Prediction**
+`POST /predict` - Predicts if there will be a delay at a specific station, time, and date.
+
+**Request Body:**
+```json
+{
+  "Date": "2026-01-15",
+  "Time": "08:30",
+  "Station": "BLOOR YONGE STATION",
+  "Line": "BD",
+  "Code": "MUSC",
+  "Bound": "W"
+}
 ```
 
-**24-Hour Forecast**
-```bash
-curl -X POST http://localhost:5000/predict_day \
-  -H "Content-Type: application/json" \
-  -d '{
-    "Date": "2026-01-15",
-    "Station": "BLOOR YONGE STATION",
-    "Line": "BD",
-    "Code": "MUSC",
-    "Bound": "W"
-  }'
+**Returns**: Delay prediction with probability percentage
+
+---
+
+#### **24-Hour Forecast**
+`POST /predict_day` - Returns delay probabilities for every hour of a specific day (0:00 to 23:00).
+
+**Request Body:**
+```json
+{
+  "Date": "2026-01-15",
+  "Station": "BLOOR YONGE STATION",
+  "Line": "BD",
+  "Code": "MUSC",
+  "Bound": "W"
+}
 ```
 
-**Health Check**
-```bash
-curl http://localhost:5000/health
+**Returns**: Array of 24 predictions (one per hour)
+
+---
+
+#### **Health Check**
+`GET /health` - Checks if the API server and ML model are running properly.
+
+**Returns**:
+```json
+{
+  "status": "healthy",
+  "service": "Subway Delay Prediction API",
+  "model_loaded": true
+}
 ```
 
 ### Python Code
@@ -227,14 +250,6 @@ The model uses 25 engineered features:
 - **Time Period**: 8 years
 - **Features**: Station, Line, Time, Date, Delay Duration, Incident Code
 
-## 🛠️ Technology Stack
-
-- **Machine Learning**: scikit-learn (HistGradientBoostingClassifier)
-- **Web Framework**: Streamlit (dashboard), Flask (API)
-- **Data Processing**: pandas, numpy
-- **Visualization**: matplotlib, seaborn
-- **Deployment**: Streamlit Community Cloud
-
 ## 📈 Model Details
 
 ### Hyperparameters
@@ -264,7 +279,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- Toronto Transit Commission (TTC) for providing public delay data!
+Toronto Transit Commission (TTC) for providing public delay data!
 
 ## 📧 Contact
 
