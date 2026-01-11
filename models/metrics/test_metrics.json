@@ -1,0 +1,11 @@
+{
+  "accuracy": 0.8341677419354838,
+  "confusion_matrix": {
+    "true_negatives": 9969,
+    "false_positives": 2104,
+    "false_negatives": 1109,
+    "true_positives": 6193
+  },
+  "test_samples": 19375,
+  "evaluation_date": "2026-01-10T19:11:08.258697"
+}

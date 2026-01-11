@@ -1,0 +1,47 @@
+{
+  "algorithm": "HistGradientBoostingClassifier",
+  "training_date": "2026-01-10T19:11:08.258132",
+  "accuracy": 0.8341677419354838,
+  "feature_columns": [
+    "DayOfWeek",
+    "Month",
+    "Hour",
+    "IsWeekend",
+    "IsRushHour",
+    "RushHour_Weekday",
+    "Weekend_Morning",
+    "Season",
+    "Hour_sin",
+    "Hour_cos",
+    "DayOfWeek_sin",
+    "DayOfWeek_cos",
+    "Hour_DelayRate",
+    "Day_DelayRate",
+    "Station_DelayRate",
+    "Line_DelayRate",
+    "Code_DelayRate",
+    "Time_Night",
+    "Time_Morning",
+    "Time_Midday",
+    "Time_Evening",
+    "Time_Late"
+  ],
+  "categorical_features": [
+    "Line",
+    "Bound",
+    "Station_Category"
+  ],
+  "total_features": 25,
+  "total_samples": 96873,
+  "train_samples": 77498,
+  "test_samples": 19375,
+  "hyperparameters": {
+    "learning_rate": 0.01,
+    "max_iter": 2500,
+    "max_leaf_nodes": 127,
+    "max_depth": 12,
+    "min_samples_leaf": 100,
+    "l2_regularization": 2.5,
+    "max_features": 0.4
+  }
+}
