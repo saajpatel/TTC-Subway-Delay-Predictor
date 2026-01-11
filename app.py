@@ -200,7 +200,7 @@ def main():
             
             forecast_bound = st.selectbox(
                 "Direction",
-                ["W", "E", "N", "S"],
+                ["N", "E", "S", "W"],
                 key="forecast_bound"
             )
         
